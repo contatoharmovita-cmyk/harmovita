@@ -1,0 +1,782 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Clínica HarmoVita | Tiago Caridi Corrêa | Psicoterapia Online | Abordagem Humanista-Existencial e Fenomenológica." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#1f5f63" />
+  <title>Clínica HarmoVita | Psicoterapia Online</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg-1:#edf4f3;
+      --bg-2:#dbe8e6;
+      --bg-3:#c7dad6;
+      --primary:#1f5f63;
+      --primary-2:#2c7a7b;
+      --gold:#cdbb92;
+      --text:#17363b;
+      --muted:#4f6c70;
+      --white:#ffffffee;
+      --line:#d7e4e2;
+      --shadow:0 18px 45px rgba(22,52,57,.14);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family: Georgia, "Times New Roman", serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 12% 15%, rgba(139,185,167,.30), transparent 20%),
+        radial-gradient(circle at 88% 85%, rgba(205,187,146,.18), transparent 18%),
+        linear-gradient(180deg, var(--bg-1), var(--bg-2) 52%, var(--bg-3));
+      overflow-x:hidden;
+    }
+
+    a{color:inherit;text-decoration:none}
+
+    .page{
+      min-height:100vh;
+      padding:28px 30px 34px;
+    }
+
+    .hero{
+      min-height:calc(100vh - 56px);
+      display:grid;
+      grid-template-columns:minmax(320px, 1fr) minmax(420px, 1.1fr);
+      align-items:center;
+      gap:48px;
+    }
+
+    .hero-text{
+      max-width:640px;
+      align-self:start;
+      padding-top:14px;
+    }
+
+    .clinic-title{
+      margin:0 0 8px 0;
+      font-size:clamp(2.6rem, 5vw, 4.3rem);
+      line-height:.98;
+      color:var(--primary);
+      font-weight:700;
+      letter-spacing:.2px;
+    }
+
+    .name-title{
+      margin:0 0 12px 0;
+      font-size:clamp(1.7rem, 3vw, 2.6rem);
+      line-height:1.04;
+      color:var(--text);
+      font-weight:700;
+    }
+
+    .hero-sub{
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--muted);
+      line-height:1.65;
+      font-size:1rem;
+      max-width:620px;
+    }
+
+    .quote-box{
+      margin-top:30px;
+      max-width:520px;
+      padding:22px 24px;
+      background:rgba(255,255,255,.62);
+      border:1px solid rgba(215,228,226,.9);
+      border-radius:22px;
+      box-shadow:0 14px 38px rgba(22,52,57,.10);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .quote-box::before{
+      content:"“";
+      position:absolute;
+      top:-6px;
+      left:16px;
+      font-size:4rem;
+      line-height:1;
+      color:rgba(31,95,99,.12);
+      font-family:Georgia, serif;
+    }
+
+    .quote-text{
+      font-family:'Caveat', cursive;
+      font-size:2rem;
+      line-height:1.35;
+      color:#1f5f63;
+      position:relative;
+      z-index:1;
+    }
+
+    .quote-author{
+      margin-top:10px;
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:.92rem;
+      color:#4f6c70;
+      font-style:italic;
+      text-align:right;
+    }
+
+    .trust-box{
+      margin-top:18px;
+      display:inline-flex;
+      flex-direction:column;
+      gap:6px;
+      padding:14px 16px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:rgba(255,255,255,.62);
+      box-shadow:var(--shadow);
+      font-family:Arial, Helvetica, sans-serif;
+      max-width:480px;
+    }
+
+    .trust-box strong{
+      color:var(--primary);
+      font-size:.98rem;
+    }
+
+    .trust-box span{
+      color:var(--muted);
+      font-size:.93rem;
+      line-height:1.5;
+    }
+
+    .top-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:22px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 16px;
+      border-radius:999px;
+      border:1px solid transparent;
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:.95rem;
+      font-weight:700;
+      box-shadow:var(--shadow);
+      transition:filter .15s ease, opacity .15s ease;
+      cursor:pointer;
+    }
+
+    .btn:hover{filter:brightness(1.03)}
+
+    .btn-primary{
+      background:linear-gradient(180deg,var(--primary-2),var(--primary));
+      color:#fff;
+    }
+
+    .btn-soft{
+      background:rgba(255,255,255,.78);
+      border-color:#d6e2e0;
+      color:var(--primary);
+    }
+
+    .btn-pay{
+      background:linear-gradient(180deg,#d8c79f,#cdbb92);
+      color:#17363b;
+    }
+
+    .btn[aria-disabled="true"]{
+      pointer-events:none;
+      opacity:.55;
+    }
+
+    .contact-line{
+      margin-top:18px;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--muted);
+      line-height:1.6;
+      font-size:.96rem;
+    }
+
+    .contact-line a{
+      color:var(--primary);
+      font-weight:700;
+    }
+
+    .mandala-wrap{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .mandala{
+      width:min(980px, 95vw);
+      aspect-ratio:1/1;
+      position:relative;
+      border-radius:50%;
+      background:
+        radial-gradient(circle at center, rgba(255,255,255,.96) 0 14%, transparent 15%),
+        radial-gradient(circle at center, rgba(139,185,167,.16) 0 27%, transparent 28%),
+        radial-gradient(circle at center, rgba(31,95,99,.09) 0 45%, transparent 46%),
+        radial-gradient(circle at center, rgba(205,187,146,.11) 0 63%, transparent 64%),
+        radial-gradient(circle at center, rgba(31,95,99,.06) 0 81%, transparent 82%);
+      border:1px solid rgba(255,255,255,.7);
+      box-shadow:0 30px 85px rgba(33,73,78,.18);
+    }
+
+    .mandala::before{
+      content:"";
+      position:absolute;
+      inset:5%;
+      border-radius:50%;
+      background:repeating-conic-gradient(from 0deg, rgba(31,95,99,.055) 0 8deg, transparent 8deg 16deg);
+      -webkit-mask: radial-gradient(circle, transparent 0 17%, #000 18% 90%, transparent 91%);
+      mask: radial-gradient(circle, transparent 0 17%, #000 18% 90%, transparent 91%);
+    }
+
+    .mandala::after{
+      content:"";
+      position:absolute;
+      inset:14%;
+      border-radius:50%;
+      border:1px solid rgba(31,95,99,.08);
+      box-shadow:
+        0 0 0 22px rgba(31,95,99,.025),
+        0 0 0 44px rgba(205,187,146,.03);
+      pointer-events:none;
+    }
+
+    .center-btn{
+      position:absolute;
+      inset:0;
+      margin:auto;
+      width:190px;
+      height:190px;
+      border-radius:50%;
+      border:1px solid #d8e4e2;
+      background:linear-gradient(180deg,#ffffff,#edf6f4);
+      display:grid;
+      place-items:center;
+      box-shadow:0 20px 50px rgba(28,70,74,.18);
+      cursor:pointer;
+      z-index:3;
+      padding:18px;
+      transition:transform .18s ease, box-shadow .18s ease;
+    }
+
+    .center-btn:hover{
+      transform:scale(1.02);
+      box-shadow:0 24px 58px rgba(28,70,74,.22);
+    }
+
+    .logo-centro{
+      text-align:center;
+    }
+
+    .logo-centro img{
+      width:120px;
+      height:120px;
+      object-fit:contain;
+      display:block;
+      margin:0 auto;
+      filter:drop-shadow(0 6px 12px rgba(0,0,0,.10));
+    }
+
+    .logo-centro .lbl{
+      margin-top:8px;
+      font-family:Arial, Helvetica, sans-serif;
+      font-weight:800;
+      font-size:.95rem;
+      color:var(--primary);
+    }
+
+    .orb{
+      position:absolute;
+      left:50%;
+      top:50%;
+      width:130px;
+      height:130px;
+      border-radius:50%;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:10px;
+      text-align:center;
+      background:rgba(255,255,255,.95);
+      border:1px solid #d8e5e2;
+      box-shadow:0 12px 30px rgba(22,52,57,.15);
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--primary);
+      font-weight:700;
+      font-size:.95rem;
+      cursor:pointer;
+      z-index:2;
+      transition:filter .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+
+    .orb:hover{
+      filter:brightness(1.03);
+      box-shadow:0 16px 35px rgba(22,52,57,.22);
+      border-color:#bfd4cf;
+    }
+
+    .orb .icon{
+      font-size:1.7rem;
+    }
+
+    /* 7 botões simétricos */
+    .p0{ transform: translate(-50%,-50%) rotate(0deg) translateY(-300px) rotate(0deg); }
+    .p1{ transform: translate(-50%,-50%) rotate(51.4deg) translateY(-300px) rotate(-51.4deg); }
+    .p2{ transform: translate(-50%,-50%) rotate(102.8deg) translateY(-300px) rotate(-102.8deg); }
+    .p3{ transform: translate(-50%,-50%) rotate(154.2deg) translateY(-300px) rotate(-154.2deg); }
+    .p4{ transform: translate(-50%,-50%) rotate(205.6deg) translateY(-300px) rotate(-205.6deg); }
+    .p5{ transform: translate(-50%,-50%) rotate(257deg) translateY(-300px) rotate(-257deg); }
+    .p6{ transform: translate(-50%,-50%) rotate(308.4deg) translateY(-300px) rotate(-308.4deg); }
+
+    .modal-backdrop{
+      position:fixed;
+      inset:0;
+      background:rgba(13,34,36,.46);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      z-index:100;
+    }
+
+    .modal-backdrop.open{
+      display:flex;
+    }
+
+    .modal{
+      width:min(760px, 96vw);
+      background:var(--white);
+      border:1px solid rgba(255,255,255,.8);
+      border-radius:28px;
+      box-shadow:0 28px 80px rgba(0,0,0,.22);
+      padding:26px 24px 22px;
+      position:relative;
+    }
+
+    .modal h3{
+      margin:0 0 12px;
+      color:var(--primary);
+      font-size:1.7rem;
+    }
+
+    .modal p,
+    .modal li{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--muted);
+      line-height:1.75;
+      font-size:1rem;
+    }
+
+    .modal .actions{
+      margin-top:18px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .close{
+      position:absolute;
+      top:12px;
+      right:12px;
+      width:42px;
+      height:42px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:#f7fbfa;
+      color:var(--primary);
+      font-size:1.2rem;
+      cursor:pointer;
+    }
+
+    .payment-gate{
+      margin-top:14px;
+      padding:14px 16px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:rgba(255,255,255,.65);
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    .payment-gate label{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      color:var(--muted);
+      line-height:1.55;
+      cursor:pointer;
+    }
+
+    .payment-note{
+      margin-top:10px;
+      color:var(--muted);
+      font-size:.92rem;
+    }
+
+    footer{
+      margin-top:26px;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--muted);
+      font-size:.92rem;
+      text-align:left;
+    }
+
+    footer a{
+      color:var(--primary);
+      font-weight:700;
+    }
+
+    @media (max-width: 1100px){
+      .hero{
+        grid-template-columns:1fr;
+        gap:22px;
+      }
+
+      .hero-text{
+        max-width:760px;
+      }
+
+      .mandala-wrap{
+        width:100%;
+      }
+
+      .mandala{
+        width:min(780px, 95vw);
+      }
+
+      .center-btn{
+        width:180px;
+        height:180px;
+      }
+
+      .logo-centro img{
+        width:105px;
+        height:105px;
+      }
+
+      .orb{
+        width:116px;
+        height:116px;
+        font-size:.88rem;
+      }
+
+      .p0{ transform: translate(-50%,-50%) rotate(0deg) translateY(-255px) rotate(0deg); }
+      .p1{ transform: translate(-50%,-50%) rotate(51.4deg) translateY(-255px) rotate(-51.4deg); }
+      .p2{ transform: translate(-50%,-50%) rotate(102.8deg) translateY(-255px) rotate(-102.8deg); }
+      .p3{ transform: translate(-50%,-50%) rotate(154.2deg) translateY(-255px) rotate(-154.2deg); }
+      .p4{ transform: translate(-50%,-50%) rotate(205.6deg) translateY(-255px) rotate(-205.6deg); }
+      .p5{ transform: translate(-50%,-50%) rotate(257deg) translateY(-255px) rotate(-257deg); }
+      .p6{ transform: translate(-50%,-50%) rotate(308.4deg) translateY(-255px) rotate(-308.4deg); }
+    }
+
+    @media (max-width: 760px){
+      .page{
+        padding:18px 14px 24px;
+      }
+
+      .clinic-title{
+        font-size:2.4rem;
+      }
+
+      .name-title{
+        font-size:1.55rem;
+      }
+
+      .hero-sub{
+        font-size:.95rem;
+      }
+
+      .quote-text{
+        font-size:1.65rem;
+      }
+
+      .top-actions{
+        width:100%;
+      }
+
+      .top-actions .btn{
+        flex:1 1 auto;
+      }
+
+      .mandala{
+        width:min(560px, 95vw);
+      }
+
+      .center-btn{
+        width:150px;
+        height:150px;
+        padding:12px;
+      }
+
+      .logo-centro img{
+        width:82px;
+        height:82px;
+      }
+
+      .logo-centro .lbl{
+        font-size:.82rem;
+      }
+
+      .orb{
+        width:90px;
+        height:90px;
+        font-size:.72rem;
+        gap:4px;
+        padding:8px;
+      }
+
+      .orb .icon{
+        font-size:1.2rem;
+      }
+
+      .p0{ transform: translate(-50%,-50%) rotate(0deg) translateY(-195px) rotate(0deg); }
+      .p1{ transform: translate(-50%,-50%) rotate(51.4deg) translateY(-195px) rotate(-51.4deg); }
+      .p2{ transform: translate(-50%,-50%) rotate(102.8deg) translateY(-195px) rotate(-102.8deg); }
+      .p3{ transform: translate(-50%,-50%) rotate(154.2deg) translateY(-195px) rotate(-154.2deg); }
+      .p4{ transform: translate(-50%,-50%) rotate(205.6deg) translateY(-195px) rotate(-205.6deg); }
+      .p5{ transform: translate(-50%,-50%) rotate(257deg) translateY(-195px) rotate(-257deg); }
+      .p6{ transform: translate(-50%,-50%) rotate(308.4deg) translateY(-195px) rotate(-308.4deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <main class="hero">
+      <div class="hero-text">
+        <div class="clinic-title">Clínica HarmoVita</div>
+
+        <div class="name-title">Tiago Caridi Corrêa</div>
+
+        <div class="hero-sub">
+          Psicólogo • CRP/SP 06/74.323<br>
+          Psicoterapia Online • Abordagem Humanista-Existencial e Fenomenológica
+        </div>
+
+        <div class="quote-box">
+          <div class="quote-text" id="quoteText"></div>
+          <div class="quote-author" id="quoteAuthor"></div>
+        </div>
+
+        <div class="trust-box">
+          <strong>Atendimento psicológico online com registro profissional ativo</strong>
+          <span>Espaço de cuidado, escuta e acolhimento, com condução ética e respeito à confidencialidade do atendimento.</span>
+        </div>
+
+        <div class="top-actions">
+          <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSf-SF0OI6ztWPkdN1BphEaHH59ClghLNC2ddzbjOW_GG_tseQ/viewform" target="_blank" rel="noopener">Agendar atendimento</a>
+          <a class="btn btn-soft" href="https://wa.me/5516997106233?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+
+        <div class="contact-line">
+          E-mail da clínica:
+          <a href="mailto:contato.harmovita@gmail.com">contato.harmovita@gmail.com</a>
+        </div>
+      </div>
+
+      <div class="mandala-wrap">
+        <div class="mandala" aria-label="Mandala principal de navegação">
+          <button type="button" class="center-btn open-info"
+            data-title="Sobre mim"
+            data-content="Olá, meu nome é <strong>Tiago</strong>, psicólogo. Acredito que a psicoterapia é um espaço de encontro, escuta e cuidado. Um lugar onde é possível falar com liberdade sobre aquilo que estamos vivendo — dúvidas, angústias, conflitos ou momentos de mudança. Muitas vezes procuramos a terapia quando algo em nossa vida pede atenção, compreensão ou transformação. Nesse processo, o trabalho é caminhar juntos na tentativa de compreender melhor as experiências, os sentimentos e os sentidos que cada pessoa atribui à própria vida. O atendimento é realizado online, em um ambiente de respeito, confidencialidade e acolhimento.">
+            <div class="logo-centro">
+              <img src="logo-icon-512.png" alt="Logo Tiago Caridi Corrêa">
+              <div class="lbl">Sobre mim</div>
+            </div>
+          </button>
+
+          <button type="button" class="orb p0 open-info"
+            data-title="Abordagem"
+            data-content="O trabalho terapêutico é orientado pela abordagem <strong>humanista-existencial com base fenomenológica</strong>. Isso significa que a terapia busca compreender a experiência da pessoa como ela é vivida, sem julgamentos ou explicações prontas. A atenção está voltada para os sentidos da experiência, as possibilidades de escolha e a construção de compreensão.">
+            <span class="icon">🌿</span><span>Abordagem</span>
+          </button>
+
+          <button type="button" class="orb p1 open-info"
+            data-title="Como funciona"
+            data-content="As sessões acontecem <strong>online</strong>, por videochamada, em ambiente reservado e seguro. Cada encontro tem duração média de <strong>45 a 50 minutos</strong>. O processo começa pelo preenchimento do formulário de agendamento. Após o envio, entro em contato pelo WhatsApp para confirmar o horário escolhido e enviar as orientações da sessão.">
+            <span class="icon">💻</span><span>Como funciona</span>
+          </button>
+
+          <button type="button" class="orb p2 open-info"
+            data-title="Privacidade"
+            data-content="O atendimento psicológico segue princípios éticos de <strong>confidencialidade e respeito à privacidade</strong>. Todas as informações compartilhadas durante as sessões são tratadas com sigilo profissional. Para o atendimento online, recomenda-se estar em um local tranquilo, reservado e com conexão estável.">
+            <span class="icon">🔒</span><span>Privacidade</span>
+          </button>
+
+          <button type="button" class="orb p3 open-info"
+            data-title="Agendar atendimento"
+            data-content="Para iniciar o atendimento, basta preencher o formulário disponível no site. Após o envio, entrarei em contato pelo WhatsApp para confirmar o horário escolhido e enviar as orientações da sessão. O link de pagamento é liberado apenas depois da confirmação do agendamento.">
+            <span class="icon">📅</span><span>Agendar atendimento</span>
+          </button>
+
+          <button type="button" class="orb p4 open-info"
+            data-title="WhatsApp"
+            data-content="Se preferir, você pode falar diretamente comigo pelo WhatsApp para tirar dúvidas antes do agendamento. Também é possível escrever para o e-mail <a href='mailto:contato.harmovita@gmail.com'>contato.harmovita@gmail.com</a>.">
+            <span class="icon">💬</span><span>WhatsApp</span>
+          </button>
+
+          <button type="button" class="orb p5 open-info"
+            data-title="Perguntas frequentes"
+            data-content="<strong>A terapia online funciona?</strong><br>Sim. A psicoterapia online tem se mostrado uma forma eficaz de atendimento, permitindo acesso ao cuidado psicológico com conforto e privacidade.<br><br><strong>Quanto tempo dura cada sessão?</strong><br>Cada sessão costuma durar entre 45 e 50 minutos.<br><br><strong>Preciso já ter feito terapia antes?</strong><br>Não. Muitas pessoas iniciam a psicoterapia justamente quando sentem necessidade de compreender melhor suas experiências.<br><br><strong>Valores do atendimento</strong><br>O valor da sessão individual é R$ 120,00. Também é possível optar pelo pacote mensal de R$ 400,00, geralmente com frequência semanal.">
+            <span class="icon">❓</span><span>FAQ</span>
+          </button>
+
+          <button type="button" class="orb p6 open-info"
+            data-title="Serviços"
+            data-content="O atendimento é voltado para <strong>adultos que desejam compreender melhor suas experiências emocionais e existenciais</strong>. A psicoterapia pode ajudar em situações como ansiedade, dificuldades nos relacionamentos, momentos de crise, sensação de vazio, luto, conflitos pessoais e profissionais. Cada processo terapêutico é construído de forma singular, respeitando o tempo e a história de cada pessoa.">
+            <span class="icon">🧩</span><span>Serviços</span>
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      Clínica HarmoVita • Psicologia Online<br>
+      E-mail: <a href="mailto:contato.harmovita@gmail.com">contato.harmovita@gmail.com</a>
+    </footer>
+  </div>
+
+  <div class="modal-backdrop" id="modal">
+    <div class="modal">
+      <button type="button" class="close" id="closeModal" aria-label="Fechar">✕</button>
+      <h3 id="modalTitle"></h3>
+      <div id="modalBody"></div>
+      <div class="actions" id="modalActions"></div>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById('modal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalBody = document.getElementById('modalBody');
+    const modalActions = document.getElementById('modalActions');
+    const closeModal = document.getElementById('closeModal');
+
+    const formLink = "https://docs.google.com/forms/d/e/1FAIpQLSf-SF0OI6ztWPkdN1BphEaHH59ClghLNC2ddzbjOW_GG_tseQ/viewform";
+    const whatsappLink = "https://wa.me/5516997106233?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta.";
+    const paymentLink = "https://link.mercadopago.com.br/tiagopsiconline";
+
+    const quotes = [
+      {
+        text: "O curioso paradoxo é que, quando me aceito como sou, então posso mudar.",
+        author: "Carl Rogers"
+      },
+      {
+        text: "Quando não podemos mudar uma situação, somos desafiados a mudar a nós mesmos.",
+        author: "Viktor Frankl"
+      },
+      {
+        text: "Toda vida verdadeira é encontro.",
+        author: "Martin Buber"
+      },
+      {
+        text: "A liberdade é a capacidade de moldar a si mesmo.",
+        author: "Rollo May"
+      },
+      {
+        text: "Quanto mais evitamos a dor, mais nos afastamos da própria vida.",
+        author: "Irvin Yalom"
+      }
+    ];
+
+    const quoteText = document.getElementById('quoteText');
+    const quoteAuthor = document.getElementById('quoteAuthor');
+
+    if (quoteText && quoteAuthor) {
+      const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+      quoteText.textContent = "“" + randomQuote.text + "”";
+      quoteAuthor.textContent = randomQuote.author;
+    }
+
+    function buildActions(title){
+      const lower = (title || "").toLowerCase();
+      let html = '';
+
+      if (lower.includes('agendar')) {
+        html += '<a class="btn btn-primary" href="' + formLink + '" target="_blank" rel="noopener">Preencher formulário</a>';
+        html += '<a class="btn btn-soft" href="' + whatsappLink + '" target="_blank" rel="noopener">Falar no WhatsApp</a>';
+        html += `
+          <div class="payment-gate">
+            <label>
+              <input type="checkbox" id="paymentConfirmCheck">
+              <span>Já recebi a confirmação do meu horário pelo WhatsApp e desejo prosseguir para o pagamento.</span>
+            </label>
+            <div class="actions" style="margin-top:12px;">
+              <a class="btn btn-pay" id="paymentButton" href="${paymentLink}" target="_blank" rel="noopener" aria-disabled="true">Pagar sessão</a>
+            </div>
+            <div class="payment-note">
+              O pagamento é liberado somente após a confirmação do agendamento.
+            </div>
+          </div>
+        `;
+      } else if (lower.includes('whatsapp')) {
+        html += '<a class="btn btn-primary" href="' + whatsappLink + '" target="_blank" rel="noopener">Abrir WhatsApp</a>';
+        html += '<a class="btn btn-soft" href="mailto:contato.harmovita@gmail.com">Enviar e-mail</a>';
+      } else {
+        html += '<a class="btn btn-primary" href="' + formLink + '" target="_blank" rel="noopener">Agendar atendimento</a>';
+        html += '<a class="btn btn-soft" href="' + whatsappLink + '" target="_blank" rel="noopener">Tirar dúvida</a>';
+      }
+
+      modalActions.innerHTML = html;
+
+      const check = document.getElementById('paymentConfirmCheck');
+      const payBtn = document.getElementById('paymentButton');
+
+      if (check && payBtn) {
+        payBtn.style.pointerEvents = 'none';
+        payBtn.style.opacity = '.55';
+
+        check.addEventListener('change', () => {
+          if (check.checked) {
+            payBtn.setAttribute('aria-disabled', 'false');
+            payBtn.style.pointerEvents = 'auto';
+            payBtn.style.opacity = '1';
+          } else {
+            payBtn.setAttribute('aria-disabled', 'true');
+            payBtn.style.pointerEvents = 'none';
+            payBtn.style.opacity = '.55';
+          }
+        });
+      }
+    }
+
+    document.querySelectorAll('.open-info').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        modalTitle.textContent = btn.dataset.title || 'Informações';
+        modalBody.innerHTML = '<p>' + (btn.dataset.content || '') + '</p>';
+        buildActions(btn.dataset.title || '');
+        modal.classList.add('open');
+      });
+    });
+
+    closeModal.addEventListener('click', () => {
+      modal.classList.remove('open');
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('open');
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        modal.classList.remove('open');
+      }
+    });
+  </script>
+</body>
+</html>
